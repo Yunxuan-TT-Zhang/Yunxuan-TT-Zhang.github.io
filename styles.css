@@ -1,0 +1,272 @@
+/* ==========================================================================
+   Personal research website — minimal & clean
+   Light + dark aware. One accent color. No build step required.
+   EDIT: change --accent below to recolor the whole site.
+   ========================================================================== */
+
+:root {
+  --accent: #2f6f6a;            /* EDIT: primary accent (a muted teal) */
+  --accent-strong: #1f504c;
+
+  --bg: #fbfbf9;
+  --bg-alt: #f2f1ec;
+  --surface: #ffffff;
+  --text: #1c1c1a;
+  --text-soft: #56564f;
+  --border: #e4e2da;
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --maxw: 760px;
+  --radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #6fbcb4;
+    --accent-strong: #8fd0c8;
+    --bg: #14140f;
+    --bg-alt: #1c1c17;
+    --surface: #201f1a;
+    --text: #ecebe4;
+    --text-soft: #a9a89f;
+    --border: #33322b;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------------------------- Header / Nav ------------------------------ */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav {
+  max-width: var(--maxw); margin: 0 auto; padding: 14px 22px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav__brand {
+  font-family: var(--serif); font-weight: 600; font-size: 1.15rem;
+  color: var(--text); letter-spacing: .2px;
+}
+.nav__brand:hover { text-decoration: none; color: var(--accent); }
+.nav__links {
+  display: flex; gap: 26px; list-style: none; margin: 0; padding: 0;
+}
+.nav__links a {
+  color: var(--text-soft); font-size: .92rem; font-weight: 500;
+}
+.nav__links a:hover { color: var(--accent); text-decoration: none; }
+
+.nav__toggle {
+  display: none; background: none; border: 0; cursor: pointer;
+  width: 30px; height: 24px; padding: 0; position: relative;
+}
+.nav__toggle span {
+  position: absolute; left: 0; height: 2px; width: 100%;
+  background: var(--text); border-radius: 2px; transition: .25s;
+}
+.nav__toggle span:nth-child(1) { top: 3px; }
+.nav__toggle span:nth-child(2) { top: 11px; }
+.nav__toggle span:nth-child(3) { top: 19px; }
+.nav__toggle.is-open span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+.nav__toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav__toggle.is-open span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+
+/* -------------------------------- Hero --------------------------------- */
+.hero { max-width: var(--maxw); margin: 0 auto; padding: 72px 22px 40px; }
+.hero__inner { display: flex; gap: 34px; align-items: flex-start; }
+.hero__photo {
+  flex: 0 0 140px; width: 140px; height: 140px; border-radius: 50%;
+  object-fit: cover; object-position: 50% 30%;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--surface);
+}
+.hero__text h1 {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(2.2rem, 6vw, 3rem); line-height: 1.05;
+  margin: 0 0 8px;
+}
+.hero__role { color: var(--text-soft); margin: 0 0 8px; font-size: 1rem; }
+.hero__funding {
+  margin: 0 0 20px; font-size: .9rem; font-style: italic;
+  color: var(--text-soft);
+  border-left: 3px solid var(--accent); padding-left: 12px;
+}
+.hero__lead { margin: 0 0 22px; font-size: 1.08rem; }
+.hero__links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.hero__links a {
+  font-weight: 500; font-size: .95rem;
+  border-bottom: 1px solid transparent;
+}
+.hero__links a:hover { border-bottom-color: currentColor; text-decoration: none; }
+
+/* ------------------------------ Sections ------------------------------- */
+.section { max-width: var(--maxw); margin: 0 auto; padding: 56px 22px; }
+.section--alt {
+  max-width: none; background: var(--bg-alt);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.section--alt > * { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
+.section--alt .section__title,
+.section--alt .section__intro,
+.section--alt .prose,
+.section--alt .cards { padding-left: 22px; padding-right: 22px; }
+
+.section__title {
+  font-family: var(--serif); font-weight: 600; font-size: 1.7rem;
+  margin: 0 0 22px; letter-spacing: .2px;
+}
+.section__title::after {
+  content: ""; display: block; width: 42px; height: 3px;
+  background: var(--accent); border-radius: 3px; margin-top: 10px;
+}
+.section__intro { color: var(--text-soft); margin: -6px 0 26px; }
+
+.prose p { margin: 0 0 16px; }
+.prose a { border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); }
+.prose a:hover { text-decoration: none; border-bottom-color: var(--accent); }
+
+/* --------------------------- Research figure --------------------------- */
+.research-figure {
+  margin: 0 0 30px; padding: 20px;
+  background: #fff; border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.research-figure img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.research-figure figcaption {
+  margin-top: 14px; font-size: .88rem; color: #56564f;
+  line-height: 1.55; text-align: center;
+}
+
+/* ------------------------------- Cards --------------------------------- */
+.cards { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow);
+}
+.card h3 {
+  font-family: var(--serif); font-size: 1.12rem; font-weight: 600;
+  margin: 0 0 10px;
+}
+.card p { margin: 0; color: var(--text-soft); font-size: .96rem; }
+
+/* --------------------------- Publications ------------------------------ */
+.pub {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; margin-bottom: 20px; background: var(--surface);
+}
+.pub--featured {
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--accent);
+}
+.pub__badge {
+  display: inline-block; font-size: .74rem; font-weight: 600;
+  letter-spacing: .5px; text-transform: uppercase;
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  padding: 3px 10px; border-radius: 999px; margin-bottom: 12px;
+}
+.pub__title {
+  font-family: var(--serif); font-size: 1.28rem; font-weight: 600;
+  line-height: 1.3; margin: 0 0 10px;
+}
+.pub__authors { margin: 0 0 4px; font-size: .96rem; }
+.pub__authors strong { color: var(--text); }
+.pub__venue { margin: 0 0 14px; color: var(--text-soft); font-size: .9rem; }
+
+.pub__abstract { margin: 0 0 16px; }
+.pub__abstract summary {
+  cursor: pointer; font-weight: 500; color: var(--accent);
+  font-size: .92rem; width: fit-content;
+}
+.pub__abstract summary:hover { color: var(--accent-strong); }
+.pub__abstract p {
+  margin: 12px 0 0; color: var(--text-soft); font-size: .95rem;
+  line-height: 1.6; text-align: justify;
+}
+
+.pub__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-block; font-size: .88rem; font-weight: 500;
+  padding: 7px 16px; border-radius: 8px;
+  background: var(--accent); color: #fff; border: 1px solid var(--accent);
+}
+.btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; text-decoration: none; }
+.btn--ghost { background: transparent; color: var(--accent); }
+.btn--ghost:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent-strong); }
+
+/* ----------------------------- Projects -------------------------------- */
+.project {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow);
+  border-left: 4px solid var(--accent);
+}
+.project h3 {
+  font-family: var(--serif); font-size: 1.28rem; font-weight: 600; margin: 0 0 10px;
+}
+.project p { margin: 0 0 16px; color: var(--text-soft); }
+
+/* ------------------------------ Lists ---------------------------------- */
+.taglist { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.taglist li {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 7px 14px; border-radius: 999px; font-size: .9rem; color: var(--text-soft);
+}
+
+.contact-list { list-style: none; padding: 0; margin: 18px 0 0; }
+.contact-list li {
+  display: flex; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.contact-list li:last-child { border-bottom: 0; }
+.contact-list span {
+  flex: 0 0 90px; color: var(--text-soft); font-size: .85rem;
+  text-transform: uppercase; letter-spacing: .5px; padding-top: 1px;
+}
+
+/* ------------------------------ Footer --------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--border); text-align: center;
+  padding: 30px 22px; color: var(--text-soft); font-size: .85rem;
+}
+.site-footer p { margin: 0; }
+
+/* ---------------------------- Responsive ------------------------------- */
+@media (max-width: 640px) {
+  .nav__toggle { display: block; }
+  .nav__links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    padding: 8px 22px 16px; display: none;
+  }
+  .nav__links.is-open { display: flex; }
+  .nav__links li { padding: 8px 0; }
+
+  .hero { padding-top: 48px; }
+  .hero__inner { flex-direction: column; gap: 22px; align-items: center; text-align: center; }
+  .hero__links { justify-content: center; }
+  .cards { grid-template-columns: 1fr; }
+  .contact-list li { flex-direction: column; gap: 2px; }
+  .contact-list span { padding-top: 0; }
+}

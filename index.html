@@ -1,0 +1,302 @@
+<!--
+  ============================================================================
+  PERSONAL RESEARCH WEBSITE
+  ----------------------------------------------------------------------------
+  Search this file for the word  EDIT:  to find every spot you should
+  personalize (your full name, profile links, photo, bio, etc.).
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Yunxuan (TT) Zhang — Cambridge</title>
+
+  <meta name="description" content="Yunxuan (TT) Zhang — PhD student in the Knowles Group, University of Cambridge. Protein design, amyloid aggregation, and neurodegenerative disease." />
+  <meta name="author" content="Yunxuan (TT) Zhang" />
+
+  <!-- Social / link-preview cards -->
+  <meta property="og:title" content="Yunxuan (TT) Zhang" />
+  <meta property="og:description" content="PhD student, Knowles Group, University of Cambridge." />
+  <meta property="og:image" content="profile.jpg" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="nav__brand">Yunxuan Zhang</a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO / INTRO ===================== -->
+    <section class="hero">
+      <div class="hero__inner">
+        <img class="hero__photo" src="profile.jpg" alt="Yunxuan (TT) Zhang" width="140" height="140" />
+
+        <div class="hero__text">
+          <h1>Yunxuan (TT) Zhang</h1>
+          <p class="hero__role">
+            PhD student · Knowles Group<br />
+            Yusuf Hamied Department of Chemistry, University of Cambridge
+          </p>
+          <p class="hero__funding">
+            Professor Sir Christopher Dobson Studentship in Protein Misfolding,
+            funded by St John&rsquo;s College, Cambridge
+          </p>
+          <p class="hero__lead">
+            I design proteins that reshape how other proteins misbehave. My
+            research sits at the intersection of <strong>deep-learning-based
+            protein design</strong>, <strong>amyloid aggregation kinetics</strong>,
+            and <strong>neurodegenerative disease</strong> — building molecules
+            that intercept the toxic intermediates behind conditions like
+            Parkinson&rsquo;s.
+          </p>
+          <div class="hero__links">
+            <a href="mailto:ttzhang2002@hotmail.com">Email</a>
+            <a href="https://scholar.google.com/citations?user=L677uFQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="https://github.com/Yunxuan-TT-Zhang" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/yunxuan-z-089850112/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section">
+      <h2 class="section__title">About</h2>
+      <div class="prose">
+        <!-- EDIT: rewrite this in your own voice. -->
+        <p>
+          I&rsquo;m a PhD student in the
+          <a href="https://www-knowles.ch.cam.ac.uk/" target="_blank" rel="noopener">Knowles Group</a>
+          at the University of Cambridge, where I work on understanding and
+          controlling protein self-assembly. Amyloid aggregation underlies many
+          of the most challenging neurodegenerative diseases, yet the molecular
+          species that matter most — transient, disordered, on-pathway
+          intermediates — are notoriously hard to target.
+        </p>
+        <p>
+          My work combines <strong>computational protein design</strong> with
+          <strong>quantitative biophysics</strong>: I use deep-learning tools to
+          create de novo binders against intrinsically disordered targets, then
+          use chemical kinetics, NMR, and biophysical assays to dissect exactly
+          which microscopic step of the aggregation cascade each molecule
+          intercepts. The goal is a rational framework for designing proteins
+          that reshape aggregation pathways rather than just slowing them down.
+        </p>
+        <!-- EDIT: add a paragraph here about your education, prior positions,
+             or personal interests when you're ready. -->
+
+      </div>
+    </section>
+
+    <!-- ===================== RESEARCH ===================== -->
+    <section id="research" class="section section--alt">
+      <h2 class="section__title">Research</h2>
+      <p class="section__intro">
+        A few themes that run through my work. <!-- EDIT freely -->
+      </p>
+
+      <figure class="research-figure">
+        <img src="research-figure.png" alt="Concept figure: alpha-synuclein aggregates into amyloid fibrils linked to disease; AI-designed mini proteins bind the NAC domain and stop aggregation." loading="lazy" />
+        <figcaption>
+          De novo &ldquo;mini proteins,&rdquo; designed with deep learning, engage the
+          NAC domain of &alpha;-synuclein and halt its aggregation into the amyloid
+          fibrils implicated in Parkinson&rsquo;s disease.
+        </figcaption>
+      </figure>
+
+      <div class="cards">
+        <article class="card">
+          <h3>De novo protein design</h3>
+          <p>
+            Using deep-learning methods (structure prediction, diffusion-based
+            design, and affinity maturation) to generate compact single-chain
+            binders — even against intrinsically disordered targets that lack a
+            stable epitope for conventional discovery.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Amyloid aggregation kinetics</h3>
+          <p>
+            Applying chemical-kinetics frameworks to seeded aggregation data to
+            resolve the individual microscopic steps — nucleation, elongation,
+            secondary nucleation — and pinpoint which one a molecule inhibits.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Targeting neurodegeneration</h3>
+          <p>
+            Focusing on &alpha;-synuclein and the toxic oligomeric species linked
+            to Parkinson&rsquo;s disease, with the aim of selectively capturing
+            on-pathway intermediates at substoichiometric ratios.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications" class="section">
+      <h2 class="section__title">Publications</h2>
+
+      <article class="pub pub--featured">
+        <span class="pub__badge">Preprint · 2026</span>
+        <h3 class="pub__title">
+          Potent substoichiometric inhibition of &alpha;-synuclein aggregation by
+          de novo oligomer-binding proteins
+        </h3>
+        <p class="pub__authors">
+          <strong>Y. Zhang</strong>, H. L. Han, L. Ortigosa-Pascual, U. Z. Miles,
+          F. Snow, D. Tu, G. Meisl, T. J. Nott, H. Laman, A. C. McShan,
+          D. D. Sahtoe, T. P. J. Knowles
+        </p>
+        <p class="pub__venue">
+          bioRxiv (2026) · Biophysics ·
+          <a href="https://doi.org/10.64898/2026.07.13.738012" target="_blank" rel="noopener">doi:10.64898/2026.07.13.738012</a>
+        </p>
+
+        <details class="pub__abstract">
+          <summary>Abstract</summary>
+          <p>
+            The non-amyloid &beta; component (NAC) domain of alpha synuclein (Syn)
+            drives Syn aggregation in Parkinson disease, yet as an intrinsically
+            disordered segment it lacks a stable epitope for conventional ligand
+            discovery. Using deep learning-based protein design, we generated
+            compact single-chain binders that take advantage of the propensity of
+            the NAC domain to adopt an extended &beta;-strand conformation, which
+            they engage and stabilise. From 21 expressed designs, 3 engaged the
+            target both in vitro and within live cells. A single round of partial
+            diffusion improved their affinity, maturing the strongest binder to a
+            dissociation constant of 1.94 nM with no detectable cross-reactivity
+            to tau, amylin or amyloid &beta;. Solution NMR spectroscopy confirmed
+            Syn peptide association with all three binders and showed that peptide
+            binding induces conformational changes consistent with the intended
+            design architecture. Each binder engaged a distinct point on the
+            aggregation pathway. Kinetic analysis combining seeded aggregation
+            with the measured affinities for monomer, oligomer and fibril resolved
+            the specific microscopic step that each binder inhibits. Notably, the
+            most potent binder acted by selectively capturing on-pathway
+            oligomers, the species most closely linked to toxicity, and suppressed
+            fibril formation at substoichiometric ratios without engaging the bulk
+            monomer. Together, these findings establish de novo-designed Syn
+            binders that selectively target distinct aggregation intermediates to
+            mechanistically reshape Syn assembly, providing a framework for the
+            rational design of aggregation-modifying proteins.
+          </p>
+        </details>
+
+        <div class="pub__actions">
+          <a class="btn" href="https://www.biorxiv.org/content/10.64898/2026.07.13.738012v1" target="_blank" rel="noopener">bioRxiv</a>
+          <!-- EDIT: link a PDF when available -->
+          <a class="btn btn--ghost" href="https://www.biorxiv.org/content/10.64898/2026.07.13.738012v1.full.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </article>
+
+      <!-- EDIT: duplicate the block below for each additional paper -->
+      <!--
+      <article class="pub">
+        <span class="pub__badge">2025</span>
+        <h3 class="pub__title">Paper title here</h3>
+        <p class="pub__authors">Author list here</p>
+        <p class="pub__venue">Journal / Venue (Year) · <a href="#">doi</a></p>
+        <div class="pub__actions">
+          <a class="btn" href="#">Paper</a>
+          <a class="btn btn--ghost" href="#">Code</a>
+        </div>
+      </article>
+      -->
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section section--alt">
+      <h2 class="section__title">Projects</h2>
+      <p class="section__intro">
+        Things I&rsquo;ve built outside of the wet lab. <!-- EDIT freely -->
+      </p>
+      <article class="project">
+        <div class="project__body">
+          <h3>LabToolkit</h3>
+          <p>
+            A free, browser-based collection of quick calculators for everyday
+            bench work &mdash; molarity, dilutions and more &mdash; that runs
+            entirely in the browser with nothing to install.
+          </p>
+          <div class="pub__actions">
+            <a class="btn" href="https://yunxuan-tt-zhang.github.io/LabToolkit/#molarity" target="_blank" rel="noopener">Open LabToolkit</a>
+            <a class="btn btn--ghost" href="https://github.com/Yunxuan-TT-Zhang/LabToolkit" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== INTERESTS ===================== -->
+    <section id="interests" class="section">
+      <h2 class="section__title">What I&rsquo;m interested in</h2>
+      <div class="prose">
+        <!-- EDIT: make this yours. -->
+        <p>
+          Broadly, I&rsquo;m fascinated by how <strong>simple physical rules give
+          rise to the complex, often pathological behaviour of proteins</strong> —
+          and by the idea that we can now <em>design</em> molecules to intervene in
+          those processes with atomic precision.
+        </p>
+        <ul class="taglist">
+          <li>Generative &amp; deep-learning models for protein design</li>
+          <li>Physical chemistry of self-assembly and phase separation</li>
+          <li>Intrinsically disordered proteins</li>
+          <li>Kinetics &amp; mechanism in biology</li>
+          <li>Translational approaches to neurodegeneration</li>
+          <!-- EDIT: add non-science interests too, if you like -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section section--alt">
+      <h2 class="section__title">Get in touch</h2>
+      <div class="prose">
+        <p>
+          I&rsquo;m always happy to talk about protein design, aggregation, or
+          potential collaborations.
+        </p>
+        <ul class="contact-list">
+          <li><span>Email</span><a href="mailto:ttzhang2002@hotmail.com">ttzhang2002@hotmail.com</a></li>
+          <li><span>Scholar</span><a href="https://scholar.google.com/citations?user=L677uFQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar profile</a></li>
+          <li><span>GitHub</span><a href="https://github.com/Yunxuan-TT-Zhang" target="_blank" rel="noopener">github.com/Yunxuan-TT-Zhang</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/yunxuan-z-089850112/" target="_blank" rel="noopener">linkedin.com/in/yunxuan-z-089850112</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Yunxuan (TT) Zhang · Built with plain HTML &amp; CSS · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
